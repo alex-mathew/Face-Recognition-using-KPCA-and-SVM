@@ -39,12 +39,26 @@
 
 
 
------Config Instructions------------
-pip install virtualenv
-virtualenv -p [python 3.7 path] venv
-source venv/bin/activate
-pip install -r requirements.txt
+# Setup
+1. Make sure your default python installation is Python 3
 
+2. Install virtualenv:
 
------Launching the App--------------
-python app.py
+	<code>pip install virtualenv</code>
+
+3. Create a virtualenv named venv:
+
+	<code>virtualenv venv</code>
+
+4. Activate the virtualenv:
+
+	<code>source ./venv/bin/activate</code> {for linux/osx}
+
+	<code>.\venv\Scripts\activate</code> {for win}
+
+5. Install dependencies in virtualenv:
+
+	<code>pip install -r requirements.txt</code>
+
+# Run
+ <code>python app.py</code>
