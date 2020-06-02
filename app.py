@@ -21,6 +21,9 @@ Builder.load_string('''
 
 class CameraClick(BoxLayout):
     def capture(self):
+        '''
+        Capture image
+        '''
         camera = self.ids['camera']
         timestr = time.strftime("%Y%m%d_%H%M%S")
         print(camera.resolution)
