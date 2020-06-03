@@ -8,6 +8,8 @@ Kivy==1.11.1
 Kivy-Garden==0.1.4
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
+numpy==1.18.4
+opencv-python==4.2.0.34
 Pygments==2.6.1
 pylint==2.5.2
 requests==2.23.0

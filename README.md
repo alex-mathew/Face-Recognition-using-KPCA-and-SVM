@@ -45,13 +45,13 @@
 
 	<code>.\venv\Scripts\activate</code> {for win}
 
-4.  If dependency issues occur, try:
-
-    <code>pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew kivy.deps.gstreamer</code>
-
-5. Install dependencies in virtualenv:
+4. Install dependencies in virtualenv:
 
 	<code>pip install -r requirements.txt</code>
 
 # Run
  <code>python app.py</code>
+
+# Issues
+If some dependency errors occur, try:
+<code>pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew kivy.deps.gstreamer</code>
