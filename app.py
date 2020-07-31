@@ -4,6 +4,8 @@ import io
 from PIL import Image
 import cv2
 import numpy as np
+from kpca_svm import KPCA, train_model, faceid 
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -35,18 +37,31 @@ def process_image():
         minNeighbors=3,
         minSize=(30, 30)
     )
+    face_label = []
     for index, (x, y, w, h) in enumerate(faces):
         ext_face = cv2.resize(cvGreyImage[y : y+h, x : x+w],
                               (100,115), 
                               interpolation = cv2.INTER_AREA)
         cv2.imwrite('face'+str(index)+'.jpg', ext_face)
+        flat_face = ext_face.flatten()
+        label = faceid(flat_face,kpca,model)
+        #print(len(label))
+        face_label.append(label)
     
-    print("Found {0} Faces!".format(len(faces)))
+    print(face_label)
+    #print(len(faces))
 
     # face recognition
 
 
     return jsonify({'msg': 'success'})
+
+# Read the dataset from input csv file
+print("Training the Model")
+train_df = pd.read_csv("./train_data.csv")
+print("Training Complete")
+# To train the model
+kpca,model = train_model(train_df)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
