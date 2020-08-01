@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Web Face ID by Machine Box</title>
+		<title>Login via Face ID</title>
 		<link rel='stylesheet' href='https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css'>
 		<link rel='stylesheet' href="{{ url_for('static', filename='app.css') }}">
 	</head>
@@ -27,7 +27,9 @@
 			</button>
 			<div class='ui info message' style='display:none'></div>
 		</div>
-		<video id="video" width="400" height="225" autoplay></video>
+		<div id="videoDiv" style="text-align: center">
+		<video id="video" style="margin: 0 auto; width: 600;" autoplay></video>
+		</div>
 		<canvas id="canvas" width="400" height="225" style="display:none;"></canvas>
 		<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
 		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>

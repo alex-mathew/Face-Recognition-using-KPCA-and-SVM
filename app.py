@@ -48,13 +48,8 @@ def process_image():
         #print(len(label))
         face_label.append(label)
     
-    print(face_label)
-    #print(len(faces))
-
-    # face recognition
-
-
-    return jsonify({'msg': 'success'})
+    print(list(face_label)[0][0])
+    return jsonify({'name': list(face_label)[0][0]})
 
 # Read the dataset from input csv file
 print("Training the Model")

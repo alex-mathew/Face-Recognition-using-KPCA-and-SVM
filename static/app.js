@@ -29,7 +29,7 @@ $(function(){
 				button.empty().append(
 					$("<i>", {class:"camera icon"})
 				).addClass('teal').removeClass('green')
-				if (resp.faces_len == 0) {
+				/*if (resp.faces_len == 0) {
 					$('.info.message').text("We didn't see a face").fadeIn()
 					return
 				}
@@ -40,14 +40,14 @@ $(function(){
 				if (!resp.matched) {
 					button.transition("shake")
 					return
-				}
+				}*/
 				$('.info.message').text("Hello " + resp.name).fadeIn()
 				button.empty().append(
 					$("<i>", {class:"check icon"})
 				).removeClass('teal').addClass('green').transition('tada')
 			},
 			error: function(){
-				$('.info.message').text("Oops, something went wrong").fadeIn()
+				$('.info.message').text("No faces detected !!").fadeIn()
 			},
 			complete: function(){
 				button.removeClass('loading')
